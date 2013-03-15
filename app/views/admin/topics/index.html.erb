@@ -1,0 +1,36 @@
+<ul class="breadcrumb">
+  <li class="active">新闻管理<li>
+</ul>
+
+<div class="clearfix">
+  <%= link_to '新增', new_admin_topic_path, :class => "btn" %>
+</div>
+<br />
+
+<table class="table table-bordered table-striped table-hover">
+  <thead>
+    <tr>
+      <th>标题</th>
+      <th>内容</th>
+      <th>发布时间</th>
+      <th colspan="2">操作</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @topics.each do |topic| %>
+    <tr>
+      <td><%= link_to topic.title, [:admin, topic] %></td>
+      <td><%= topic.body %></td>
+      <td><%= topic.created_at.in_time_zone('Beijing') %></td>
+      <td><%= link_to '修改', edit_admin_topic_path(topic) %></td>
+      <td><%= link_to '删除', admin_topic_path(topic), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= will_paginate @topics %>
+
+<%= link_to '新增', new_admin_topic_path, class: 'btn' %>
+

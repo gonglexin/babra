@@ -1,0 +1,5 @@
+cn:
+  will_paginate:
+    previous_label: "&#8592; 后退"
+    next_label: "前进 &#8594;"
+    page_gap: "&hellip;"

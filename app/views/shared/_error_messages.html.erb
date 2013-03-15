@@ -1,11 +1,13 @@
 <% if target.errors.any? %>
   <div id="error_explanation">
-    <h2><%= pluralize(target.errors.count, "error") %> prohibited this <%= target %> from being saved:</h2>
-
-    <ul>
-    <% target.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
+    <div class="alert alert-error alert-block">
+      <a class="close" data-dismiss="alert">×</a>
+      <h4 class="alert-heading">发生了<%= target.errors.count %>个错误:</h4>
+      <ul>
+        <% target.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 <% end %>

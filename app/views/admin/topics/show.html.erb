@@ -1,0 +1,9 @@
+<ul class="breadcrumb">
+  <li class="active">新闻 - <%= @topic.title %><li>
+</ul>
+
+<pre><%= @topic.body %></pre>
+
+
+<%= link_to '修改', edit_admin_topic_path(@topic), class: 'btn' %>
+<%= link_to '返回', admin_topics_path, class: 'btn' %>

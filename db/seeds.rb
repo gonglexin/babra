@@ -27,3 +27,7 @@ categories[1].children.create(name: '美容服')
 
 categories[2].children.create(name: 'T恤衫')
 categories[2].children.create(name: '文化衫')
+
+(1..20).each do |i|
+  Topic.create(title: "测试标题 - #{i}", body: "测试内容 - #{i}")
+end

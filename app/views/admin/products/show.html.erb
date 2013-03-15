@@ -2,8 +2,6 @@
   <li class="active">产品展示 - <%= @product.name %><li>
 </ul>
 
-<p id="notice"><%= notice %></p>
-
 <% if @product.image? %>
   <ul class="thumbnails">
     <li class="thumbnail">
@@ -12,9 +10,7 @@
   </ul>
 <% end %>
 
-<p>
-  <%= @product.description %>
-</p>
+<pre><%= @product.description %></pre>
 
 
 <%= link_to '修改', edit_admin_product_path(@product), class: 'btn' %>
