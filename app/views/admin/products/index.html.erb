@@ -1,0 +1,49 @@
+<ul class="breadcrumb">
+  <li class="active">产品管理<li>
+</ul>
+
+<div class="clearfix">
+  <%= link_to '新增', new_admin_product_path, :class => "btn" %>
+</div>
+<br />
+
+<ul class="thumbnails">
+  <% @products.each do |product| %>
+    <li class="span2">
+      <%= link_to image_tag(product.image.thumb.url), [:admin, product], :class => 'thumbnail' %>
+      <div class="caption" style="text-align: center">
+        <h5><%= product.name %></h5>
+        <p>
+          <%= link_to '修改', edit_admin_product_path(product) %>
+          <%= link_to '删除', admin_product_path(product), method: :delete, data: { confirm: 'Are you sure?' } %>
+        </p>
+      </div>
+    </li>
+  <% end %>
+</ul>
+
+<table class="table table-bordered table-striped table-hover table-condensed">
+  <thead>
+    <tr>
+      <th>名称</th>
+      <th>描述</th>
+      <th>分类</th>
+      <th colspan="2">操作</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+    <tr>
+      <td><a href='<%= admin_product_path(product) %>' rel="popover" data-trigger="hover" data-content='<%= sanitize image_tag(product.image.thumb.url) %>' data-title="<%= product.name %>"><%= product.name %></a></td>
+      <td><%= product.description %></td>
+      <td><%= product.category.name if product.category %></td>
+      <td><%= link_to '修改', edit_admin_product_path(product) %></td>
+      <td><%= link_to '删除', admin_product_path(product), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<%= link_to '新增', new_admin_product_path, class: 'btn' %>

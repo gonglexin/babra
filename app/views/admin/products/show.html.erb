@@ -1,0 +1,21 @@
+<ul class="breadcrumb">
+  <li class="active">产品展示 - <%= @product.name %><li>
+</ul>
+
+<p id="notice"><%= notice %></p>
+
+<% if @product.image? %>
+  <ul class="thumbnails">
+    <li class="thumbnail">
+      <%= image_tag(@product.image.thumb.url) %>
+    </li>
+  </ul>
+<% end %>
+
+<p>
+  <%= @product.description %>
+</p>
+
+
+<%= link_to '修改', edit_admin_product_path(@product), class: 'btn' %>
+<%= link_to '返回', admin_products_path, class: 'btn' %>
