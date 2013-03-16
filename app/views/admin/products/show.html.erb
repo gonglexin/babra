@@ -5,13 +5,12 @@
 <% if @product.image? %>
   <ul class="thumbnails">
     <li class="thumbnail">
-      <%= image_tag(@product.image.thumb.url) %>
+      <%= image_tag(@product.image.url) %>
     </li>
   </ul>
 <% end %>
 
-<pre><%= @product.description %></pre>
-
+<%= content_tag(:pre, @product.description) unless @product.description.blank? %>
 
 <%= link_to '修改', edit_admin_product_path(@product), class: 'btn' %>
 <%= link_to '返回', admin_products_path, class: 'btn' %>

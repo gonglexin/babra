@@ -21,7 +21,7 @@
     <% @topics.each do |topic| %>
     <tr>
       <td><%= link_to topic.title, [:admin, topic] %></td>
-      <td><%= topic.body %></td>
+      <td><%= truncate(topic.body, length: 30) %></td>
       <td><%= topic.created_at.in_time_zone('Beijing') %></td>
       <td><%= link_to '修改', edit_admin_topic_path(topic) %></td>
       <td><%= link_to '删除', admin_topic_path(topic), method: :delete, data: { confirm: 'Are you sure?' } %></td>

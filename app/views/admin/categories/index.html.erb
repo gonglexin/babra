@@ -4,10 +4,10 @@
 
 <div class="well sidebar-nav">
   <ul class="nav nav-list">
-    <li class="nav-header"><span>导航 <%= link_to '新增', new_admin_category_path %></span></li>
+    <li class="nav-header"><span>分类导航 <%= link_to '新增', new_admin_category_path %></span></li>
     <% Category.roots.each do |category| %>
       <li>
-        <%= category.name %>
+        <b><%= category.name %></b>
         <span><%= link_to '新增', new_admin_category_path(parent_id: category) %></span>
         <span><%= link_to '修改', edit_admin_category_path(category) %></span>
         <span><%= link_to '删除', admin_category_path(category), method: :delete, data: { confirm: 'Are you sure?' } %></span>
