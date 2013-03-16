@@ -14,8 +14,8 @@
       <div class="caption" style="text-align: center">
         <h5><%= product.name %></h5>
         <p>
-          <%= link_to '修改', edit_admin_product_path(product) %>
-          <%= link_to '删除', admin_product_path(product), method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to '修改', edit_admin_product_path(product), class: 'btn btn-mini' %>
+          <%= link_to '删除', admin_product_path(product), method: :delete, data: { confirm: t('confirm') }, class: 'btn btn-mini' %>
         </p>
       </div>
     </li>
