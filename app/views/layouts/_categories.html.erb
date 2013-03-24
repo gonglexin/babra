@@ -1,12 +1,12 @@
 <div class="well sidebar-nav">
   <ul class="nav nav-list">
-    <li class="nav-header">导航</li>
+    <li class="nav-header">产品类别</li>
     <% Category.roots.each do |category| %>
-      <li><%= link_to category.name, '/' %></li>
+      <li><%= link_to category.name, {:controller => 'products', :action => 'index', :category => category.id} %></li>
       <% if category.has_children? %>
         <ul class="nav nav-list">
           <% category.children.each do |child| %>
-            <li><%= link_to child.name, '/' %></li>
+            <li><%= link_to child.name, {:controller => 'products', :action => 'index', :category => child.id} %></li>
           <% end %>
         </ul>
       <% end %>

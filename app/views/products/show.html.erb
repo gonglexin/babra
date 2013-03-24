@@ -1,2 +1,18 @@
-<h1>Products#show</h1>
-<p>Find me in app/views/products/show.html.erb</p>
+<ul class="breadcrumb">
+  <li class="active"><%= @product.name %><li>
+</ul>
+<% if @product.image? %>
+    <ul class="thumbnails">
+      <li class="thumbnail">
+        <%= image_tag(@product.image.url) %>
+      </li>
+    </ul>
+<% end %>
+<pre class="description">
+<%= @product.description %>
+</pre>
+
+<div>
+  <%= link_to '所有产品', products_path, :class => "btn" %>
+</div>
+

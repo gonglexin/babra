@@ -11,3 +11,39 @@
  *= require_self
  *= require_tree .
  */
+
+#app {
+  background-color: #331;
+}
+
+#content {
+  margin-bottom: 40px;
+  padding-bottom: 30px;
+  border-radius: 0 0 4px 4px;
+  background-color: white;
+
+  pre {
+    /*background-color: white;*/
+  }
+
+  .well.sidebar-nav{
+    margin-left: 20px;
+
+    .nav a {
+      /*color: #999999;*/
+      color: #777777;
+    }
+  }
+  #right {
+    margin-right: 20px;
+
+    .description {
+      background-color: white;
+      border: 0;
+    }
+
+    .thumbnail {
+      border: 0;
+    }
+  }
+}

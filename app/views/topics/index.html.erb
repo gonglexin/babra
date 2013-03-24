@@ -1,0 +1,16 @@
+<ul class="breadcrumb">
+  <li class="active">新闻<li>
+</ul>
+
+<table class="table table-bordered table-striped table-hover">
+  <tbody>
+    <% @topics.each do |topic| %>
+    <tr>
+      <td><%= link_to topic.title, topic %><span class="pull-right"><%= topic.created_at.in_time_zone('Beijing') %></span></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= will_paginate @topics %>
+

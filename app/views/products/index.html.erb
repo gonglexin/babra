@@ -1,3 +1,9 @@
-<div class='product'>
+<ul class="breadcrumb">
+  <li class="active">产品列表<li>
+</ul>
+
+<ul class="thumbnails">
   <%= render @products %>
-</div>
+</ul>
+
+<%= will_paginate @products %>

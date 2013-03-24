@@ -20,7 +20,7 @@
   <tbody>
     <% @topics.each do |topic| %>
     <tr>
-      <td><%= link_to topic.title, [:admin, topic] %></td>
+      <td><%= link_to truncate(topic.title, length: 10), [:admin, topic] %></td>
       <td><%= truncate(topic.body, length: 30) %></td>
       <td><%= topic.created_at.in_time_zone('Beijing') %></td>
       <td><%= link_to '修改', edit_admin_topic_path(topic) %></td>
