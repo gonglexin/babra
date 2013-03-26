@@ -8,25 +8,28 @@
 <%= bootstrap_flash %>
 <div>
   <%= form_tag messages_path do %>
-    <fieldset>
-      <div class="clearfix">
-        <%= text_field_tag :name, params[:name], :placeholder => "姓名" %>
+    <div class="control-group">
+      <%= label_tag 'name', '姓名:', class: 'control-label' %>
+      <div class="controls">
+        <%= text_field_tag :name, params[:name] %>
       </div>
+    </div>
 
-      <div class="clearfix">
-        <%= text_field_tag :contact, params[:contact], :placeholder => "联系方式" %>
+    <div class="control-group">
+      <%= label_tag 'contact', '联系方式:', class: 'control-label' %>
+      <div class="controls">
+        <%= text_field_tag :contact, params[:contact] %>
       </div>
+    </div>
 
-      <div class="clearfix">
-        <%= text_area_tag :body, params[:body], :placeholder => "留言", :style => "width: 420px;", :rows => 10, :cols => 100 %>
+    <div class="control-group">
+      <%= label_tag 'body', '留言:', class: 'control-label' %>
+      <div class="controls">
+        <%= text_area_tag :body, params[:body], :style => "width: 420px;", :rows => 10, :cols => 100 %>
       </div>
+    </div>
 
-      <div class="clearfix">
-        验 证 码：	 *   
-      </div>
-
-      <%= submit_tag "提交", :class => "btn" %>
-    </fieldset>
+    <%= submit_tag "提交", :class => "btn" %>
   <% end %>
 </div>
 
