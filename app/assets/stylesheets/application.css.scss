@@ -29,11 +29,15 @@
   .well.sidebar-nav{
     margin-left: 20px;
 
-    .nav a {
-      /*color: #999999;*/
-      color: #777777;
+    .nav li{
+      /*background-image: url('left_a.gif');*/
+
+      a {
+        color: #777777;
+      }
     }
   }
+
   #right {
     margin-right: 20px;
 
@@ -46,4 +50,5 @@
       border: 0;
     }
   }
+
 }

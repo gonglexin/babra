@@ -1,19 +1,18 @@
 class MessagesController < ApplicationController
 
   def create
-    #TODO：model
     @message = Message.new(message_params)
 
     if @message.save
-      redirect_to @message, notice: '留言创建成功.'
+      redirect_to message_path, notice: '非常谢谢您的宝贵留言!'
     else
-      render action: 'new'
+      redirect_to message_path
     end
   end
 
   private
-  #TODO: params
     def message_params
-      params.require(:message).permit(:name, :description, :category_id, :image, :image_cache)
+      #params.require(:message).permit(:name, :contact, :body)
+      params.permit(:name, :contact, :body)
     end
 end

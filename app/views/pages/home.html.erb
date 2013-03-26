@@ -22,7 +22,6 @@
     引领职装潮流,尽显锦衣服装!<br />
 </pre>
 
-<hr />
 <ul class="breadcrumb">
   <li class="active">新闻<li>
 </ul>
@@ -30,13 +29,19 @@
   <tbody>
     <% @topics.each do |topic| %>
     <tr>
-      <td><%= link_to topic.title, topic %><span class="pull-right"><%= topic.created_at.in_time_zone('Beijing') %></span></td>
+      <td><%= link_to topic.title, topic %><span class="pull-right"><%= topic.created_at.to_date %></span></td>
     </tr>
     <% end %>
   </tbody>
 </table>
+<ul>
+  <% @topics.each do |topic| %>
+    <li><%= link_to topic.title, topic %><span class="pull-right"><%= topic.created_at.to_date %></span></li>
+  <% end %>
+</ul>
+
 <ul class="breadcrumb">
-  <li class="active">产品推荐<li>
+  <li class="active">推荐产品<li>
 </ul>
 <ul class="thumbnails">
   <%= render @products %>

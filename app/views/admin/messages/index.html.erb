@@ -1,2 +1,30 @@
-<h1>Admin::Messages#index</h1>
-<p>Find me in app/views/admin/messages/index.html.erb</p>
+<ul class="breadcrumb">
+  <li class="active">留言管理<li>
+</ul>
+
+<table class="table table-bordered table-striped table-hover">
+  <thead>
+    <tr>
+      <th>留言</th>
+      <th>姓名</th>
+      <th>联系</th>
+      <th>时间</th>
+      <th>操作</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @messages.each do |message| %>
+    <tr>
+      <td><%= link_to truncate(message.body, length: 10), [:admin, message] %></td>
+      <td><%= truncate(message.name, length: 30) %></td>
+      <td><%= message.contact %></td>
+      <td><%= message.created_at.in_time_zone('Beijing') %></td>
+      <td><%= link_to '删除', admin_message_path(message), method: :delete, data: { confirm: t('confirm') } %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= will_paginate @messages %>
+

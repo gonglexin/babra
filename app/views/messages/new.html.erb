@@ -1,33 +1,28 @@
 <ul class="breadcrumb">
   <li class="active">留言<li>
 </ul>
-<pre>
+<p>
   尊敬的客户您好。感谢您的支持与关注，您有任何问题可以通过填写下表在线提问、投诉或者与我们交流，相关人员会迅速给予您答复，谢谢。(说明：带*号的为必填项！)
-您的姓名：	 *
-联系方式：	      不公开联系方式
-联系地址：	
-留言标题：	  *
-留言内容：	  *
-验 证 码：	 *   
- 提交 关闭
-</pre>
-<% flash.each do |key, value| %>
-  <div class="alert alert-<%= key %>" style="margin-left:30px;">
-    <a class="close" data-dismiss="alert">×</a>
-    <%= value %>
-  </div>
-<% end %>
+</p>
 
+<%= bootstrap_flash %>
 <div>
-  <h2>留言</h2>
-  <%= form_tag messages_path do -%>
+  <%= form_tag messages_path do %>
     <fieldset>
       <div class="clearfix">
-        <%= text_field_tag :email, params[:email], :placeholder => "Email" %>
+        <%= text_field_tag :name, params[:name], :placeholder => "姓名" %>
       </div>
 
       <div class="clearfix">
-        <%= password_field_tag :password, params[:password], :placeholder => "Password" %>
+        <%= text_field_tag :contact, params[:contact], :placeholder => "联系方式" %>
+      </div>
+
+      <div class="clearfix">
+        <%= text_area_tag :body, params[:body], :placeholder => "留言", :style => "width: 420px;", :rows => 10, :cols => 100 %>
+      </div>
+
+      <div class="clearfix">
+        验 证 码：	 *   
       </div>
 
       <%= submit_tag "提交", :class => "btn" %>

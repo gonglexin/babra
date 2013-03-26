@@ -1,2 +1,12 @@
-<h1>Admin::Messages#show</h1>
-<p>Find me in app/views/admin/messages/show.html.erb</p>
+<ul class="breadcrumb">
+  <li class="active">留言信息<li>
+</ul>
+
+<p>
+  <%= @message.name %>
+  <%= @message.contact %>
+  <%= content_tag(:pre, @message.body) unless @message.body.blank? %>
+</p>
+
+<%= link_to '返回', admin_messages_path, class: 'btn' %>
+
