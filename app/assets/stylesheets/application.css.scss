@@ -19,17 +19,18 @@
 #content {
   margin-bottom: 40px;
   padding-bottom: 30px;
-  border-radius: 0 0 4px 4px;
+  border-radius: 4px;
   background-color: white;
+
+  .important {
+    color: red;
+    font-weight: bold;
+  }
 
   pre {
     background-color: white;
     border: none;
 
-    .important {
-      color: red;
-      font-weight: bold;
-    }
   }
 
   .well.sidebar-nav{
