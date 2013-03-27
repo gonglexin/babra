@@ -1,23 +1,18 @@
 <ul class="breadcrumb">
-  <li class="active">新闻<span class="pull-right"><%= link_to "更多&nbsp;&rsaquo;&rsaquo;".html_safe, topics_path %></span><li>
+  <li class="active">新闻<span class="offset7"><%= link_to "更多&nbsp;&rsaquo;&rsaquo;".html_safe, topics_path %></span></li>
 </ul>
-<table class="table table-bordered">
+<table class="table topics">
   <tbody>
     <% @topics.each do |topic| %>
     <tr>
-      <td><%= link_to truncate(topic.title, length: 40), topic %><span class="pull-right"><%= topic.created_at.to_date %></span></td>
+      <td><%= link_to truncate(topic.title, length: 40), topic %><span class="pull-right date">[<%= topic.created_at.to_date %>]</span></td>
     </tr>
     <% end %>
   </tbody>
 </table>
-<ul>
-  <% @topics.each do |topic| %>
-    <li><%= link_to topic.title, topic %><span class="pull-right"><%= topic.created_at.to_date %></span></li>
-  <% end %>
-</ul>
 
 <ul class="breadcrumb">
-  <li class="active">推荐产品<li>
+  <li class="active">推荐<span class="offset7"><%= link_to "更多&nbsp;&rsaquo;&rsaquo;".html_safe, products_path %></span></li>
 </ul>
 <ul class="thumbnails">
   <%= render @products %>

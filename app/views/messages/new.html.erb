@@ -1,37 +1,35 @@
-<ul class="breadcrumb">
-  <li class="active">留言<li>
-</ul>
+<%= render 'shared/breadcrumb', title: "留言" %>
+
 <pre>
 尊敬的客户您好。感谢您的支持与关注，您有任何问题可以通过填写下表在线提问、投诉或者与我们交流，相关人员会迅速给予您答复，谢谢。(说明：带<span class="important">*</span>号的为必填项！)
 </pre>
 
+<%= render 'shared/error_messages', :target => @message %>
 <%= bootstrap_flash %>
-<div>
-  <%= form_tag messages_path, class: 'form-horizontal' do %>
-    <div class="control-group">
-      <%= label_tag 'name', '姓名:', class: 'control-label' %>
-      <div class="controls">
-        <%= text_field_tag :name, params[:name] %> &nbsp;<span class="important">*</span>
-      </div>
+<%= form_tag messages_path, class: 'form-horizontal' do %>
+  <div class="control-group">
+    <%= label_tag 'name', '姓名:', class: 'control-label' %>
+    <div class="controls">
+      <%= text_field_tag :name, params[:name] %> &nbsp;<span class="important">*</span>
     </div>
+  </div>
 
-    <div class="control-group">
-      <%= label_tag 'contact', '联系方式:', class: 'control-label' %>
-      <div class="controls">
-        <%= text_field_tag :contact, params[:contact] %> &nbsp;<span class="important">*</span>
-      </div>
+  <div class="control-group">
+    <%= label_tag 'contact', '联系方式:', class: 'control-label' %>
+    <div class="controls">
+      <%= text_field_tag :contact, params[:contact] %> &nbsp;<span class="important">*</span>
     </div>
+  </div>
 
-    <div class="control-group">
-      <%= label_tag 'body', '留言:', class: 'control-label' %>
-      <div class="controls">
-        <%= text_area_tag :body, params[:body], :style => "width: 420px;", :rows => 10, :cols => 100 %> &nbsp;<span class="important">*</span>
-      </div>
+  <div class="control-group">
+    <%= label_tag 'body', '留言:', class: 'control-label' %>
+    <div class="controls">
+      <%= text_area_tag :body, params[:body], :style => "width: 420px;", :rows => 10, :cols => 100 %> &nbsp;<span class="important">*</span>
     </div>
+  </div>
 
-    <div class="form-actions">
-      <%= submit_tag "提交", :class => "btn" %>
-    </div>
-  <% end %>
-</div>
+  <div class="form-actions">
+    <%= submit_tag "提交", :class => "btn" %>
+  </div>
+<% end %>
 

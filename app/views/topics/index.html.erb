@@ -1,12 +1,10 @@
-<ul class="breadcrumb">
-  <li class="active">新闻<li>
-</ul>
+<%= render 'shared/breadcrumb', title: "新闻" %>
 
-<table class="table table-bordered table-striped table-hover">
+<table class="table table-bordered table-striped table-hover topics">
   <tbody>
     <% @topics.each do |topic| %>
     <tr>
-      <td><%= link_to topic.title, topic %><span class="pull-right"><%= topic.created_at.in_time_zone('Beijing') %></span></td>
+      <td><%= link_to topic.title, topic %><span class="pull-right date">[<%= topic.created_at.to_date %>]</span></td>
     </tr>
     <% end %>
   </tbody>

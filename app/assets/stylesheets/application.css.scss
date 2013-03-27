@@ -27,20 +27,25 @@
     font-weight: bold;
   }
 
+  .date {
+    color: #999;
+  }
+
   pre {
     background-color: white;
     border: none;
-
   }
 
   .well.sidebar-nav{
     margin-left: 20px;
 
-    .nav li{
-      /*background-image: url('left_a.gif');*/
-
+    .nav{
       a {
         color: #777777;
+      }
+
+      li.active>a{
+        background-color: #eeeeee;
       }
     }
   }
@@ -58,7 +63,6 @@
       padding: 2px;
       border-radius: 4px;
     }
-
   }
 
 }

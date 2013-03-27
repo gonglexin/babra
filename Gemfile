@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.0.0.beta1'
 
-gem 'sqlite3'
+gem 'mysql2'
 
 # style
 gem 'twitter-bootstrap-rails'

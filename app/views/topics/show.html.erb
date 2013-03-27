@@ -1,6 +1,4 @@
-<ul class="breadcrumb">
-  <li class="active">新闻 - <%= @topic.title %> 发布于: <%= @topic.created_at.in_time_zone('Beijing') %><li>
-</ul>
+<%= render 'shared/breadcrumb', title: "新闻 - #{@topic.title} 发布于#{@topic.created_at.to_date}" %>
 
 <%= content_tag(:pre, @topic.body) unless @topic.body.blank? %>
 

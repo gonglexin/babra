@@ -2,11 +2,11 @@
   <ul class="nav nav-list">
     <li class="nav-header">产品类别</li>
     <% Category.roots.each do |category| %>
-      <li><%= link_to category.name, {:controller => 'products', :action => 'index', :category => category.id} %></li>
+      <%= render_category category %>
       <% if category.has_children? %>
         <ul class="nav nav-list">
           <% category.children.each do |child| %>
-            <li><%= link_to child.name, {:controller => 'products', :action => 'index', :category => child.id} %></li>
+            <%= render_category child %>
           <% end %>
         </ul>
       <% end %>
