@@ -23,7 +23,13 @@
   background-color: white;
 
   pre {
-    /*background-color: white;*/
+    background-color: white;
+    border: none;
+
+    .important {
+      color: red;
+      font-weight: bold;
+    }
   }
 
   .well.sidebar-nav{
@@ -46,9 +52,12 @@
       border: 0;
     }
 
-    .thumbnail {
-      border: 0;
+    .image {
+      border: 1px #ccc solid;
+      padding: 2px;
+      border-radius: 4px;
     }
+
   }
 
 }
