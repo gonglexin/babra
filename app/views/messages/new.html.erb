@@ -5,31 +5,33 @@
 </pre>
 
 <%= bootstrap_flash %>
-<%= form_tag messages_path, class: 'form-horizontal' do %>
-  <%= render 'shared/error_messages', :target => @message %>
+
+<%= form_for @message, html: { class: 'form-horizontal' } do |f| %>
+  <%= render 'shared/error_messages', target: @message %>
+
   <div class="control-group">
-    <%= label_tag 'name', '姓名:', class: 'control-label' %>
+    <%= f.label :name, '姓名:', class: 'control-label' %>
     <div class="controls">
-      <%= text_field_tag :name, params[:name] %> &nbsp;<span class="important">*</span>
+      <%= f.text_field :name, class: 'text_field' %> &nbsp;<span class="important">*</span>
     </div>
   </div>
 
   <div class="control-group">
-    <%= label_tag 'contact', '联系方式:', class: 'control-label' %>
+    <%= f.label :contact, '联系方式:', class: 'control-label' %>
     <div class="controls">
-      <%= text_field_tag :contact, params[:contact] %> &nbsp;<span class="important">*</span>
+      <%= f.text_field :contact, class: 'text_field' %> &nbsp;<span class="important">*</span>
     </div>
   </div>
 
   <div class="control-group">
-    <%= label_tag 'body', '留言:', class: 'control-label' %>
+    <%= f.label :body, '留言:', class: 'control-label' %>
     <div class="controls">
-      <%= text_area_tag :body, params[:body], :style => "width: 420px;", :rows => 10, :cols => 100 %> &nbsp;<span class="important">*</span>
+      <%= f.text_area :body, style: "width: 420px;", rows: 10, cols: 100, class: 'text-area' %> &nbsp;<span class="important">*</span>
     </div>
   </div>
 
   <div class="form-actions">
-    <%= submit_tag "提交", :class => "btn" %>
+    <%= f.submit "提交", class: "btn" %>
   </div>
-<% end %>
 
+<% end %>
