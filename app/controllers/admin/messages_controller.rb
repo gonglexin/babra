@@ -2,7 +2,7 @@ class Admin::MessagesController < Admin::BaseController
   before_action :set_message, only: [:show, :destroy]
 
   def index
-    @messages = Message.page(params[:page]).per_page(16).order('created_at DESC')
+    @messages = Message.page(params[:page]).per_page(16).order(created_at: :desc)
   end
 
   def show

@@ -1,14 +1,14 @@
-<%= form_for [:admin, @product], :html => { :class => 'form-horizontal' } do |f| %>
-  <%= render 'shared/error_messages', :target => @product %>
+<%= form_for [:admin, @product], html: { class: 'form-horizontal' } do |f| %>
+  <%= render 'shared/error_messages', target: @product %>
 
   <div class="control-group">
-    <%= f.label :name, '名称', :class => 'control-label' %>
+    <%= f.label :name, '名称', class: 'control-label' %>
     <div class="controls">
-      <%= f.text_field :name, :class => 'text_field' %>
+      <%= f.text_field :name, class: 'text_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :image, '图片', :class => 'control-label' %>
+    <%= f.label :image, '图片', class: 'control-label' %>
     <% if @product.image? %>
       <ul class="thumbnails">
         <li class="thumbnail">
@@ -24,7 +24,7 @@
   <div class="control-group">
     <%= f.label :description, '描述', class: 'control-label' %>
     <div class="controls">
-      <%= f.text_area :description, :style => "width: 400px;", :cols => '100', :rows => 12, class: 'text-area' %>
+      <%= f.text_area :description, style: "width: 400px;", cols: 100, rows: 12, class: 'text-area' %>
     </div>
   </div>
   <div class="control-group">

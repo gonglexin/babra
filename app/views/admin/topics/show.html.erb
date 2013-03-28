@@ -1,6 +1,4 @@
-<ul class="breadcrumb">
-  <li class="active">新闻 - <%= @topic.title %><li>
-</ul>
+<%= render 'shared/breadcrumb', title: "新闻 - #{@topic.title}" %>
 
 <%= content_tag(:pre, @topic.body) unless @topic.body.blank? %>
 

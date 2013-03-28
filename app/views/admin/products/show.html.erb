@@ -1,6 +1,4 @@
-<ul class="breadcrumb">
-  <li class="active">产品展示 - <%= @product.name %><li>
-</ul>
+<%= render 'shared/breadcrumb', title: "产品展示 - #{@product.name}" %>
 
 <% if @product.image? %>
   <ul class="thumbnails">

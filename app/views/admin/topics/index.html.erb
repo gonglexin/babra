@@ -1,9 +1,7 @@
-<ul class="breadcrumb">
-  <li class="active">新闻管理<li>
-</ul>
+<%= render 'shared/breadcrumb', title: "新闻管理" %>
 
 <div class="clearfix">
-  <%= link_to '新增', new_admin_topic_path, :class => "btn" %>
+  <%= link_to '新增', new_admin_topic_path, class: "btn" %>
 </div>
 <br />
 
