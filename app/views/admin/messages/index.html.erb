@@ -14,8 +14,8 @@
   <tbody>
     <% @messages.each do |message| %>
     <tr>
-      <td><%= link_to truncate(message.body, length: 10), [:admin, message] %></td>
-      <td><%= truncate(message.name, length: 30) %></td>
+      <td><%= link_to truncate(message.body, length: 30), [:admin, message] %></td>
+      <td><%= message.name %></td>
       <td><%= message.contact %></td>
       <td><%= message.created_at.to_date %></td>
       <td><%= link_to '删除', admin_message_path(message), method: :delete, data: { confirm: t('confirm') } %></td>

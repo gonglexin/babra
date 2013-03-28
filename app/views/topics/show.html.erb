@@ -1,4 +1,4 @@
-<%= render 'shared/breadcrumb', title: "新闻 - #{@topic.title} 发布于#{@topic.created_at.to_date}" %>
+<%= render 'shared/breadcrumb', title: "新闻 - #{@topic.title} 发布于#{ l @topic.created_at.to_date}" %>
 
-<%= content_tag(:pre, @topic.body) unless @topic.body.blank? %>
+<%= content_tag(:pre, @topic.body.html_safe) unless @topic.body.blank? %>
 

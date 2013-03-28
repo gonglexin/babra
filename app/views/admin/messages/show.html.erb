@@ -1,10 +1,12 @@
 <%= render 'shared/breadcrumb', title: "留言信息" %>
 
 <p>
-  <%= @message.name %>
-  <%= @message.contact %>
-  <%= content_tag(:pre, @message.body) unless @message.body.blank? %>
+  姓名: <%= @message.name %>
 </p>
+<p>
+  联系方式: <%= @message.contact %>
+</p>
+<%= content_tag(:pre, @message.body) unless @message.body.blank? %>
 
 <%= link_to '返回', admin_messages_path, class: 'btn' %>
 

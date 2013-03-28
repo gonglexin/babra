@@ -5,7 +5,7 @@
   <tbody>
     <% @topics.each do |topic| %>
     <tr>
-      <td><%= link_to truncate(topic.title, length: 40), topic %><span class="pull-right date">[<%= topic.created_at.to_date %>]</span></td>
+      <td><%= link_to truncate(topic.title, length: 40), topic %><span class="pull-right date">[<%= l topic.created_at.to_date %>]</span></td>
     </tr>
     <% end %>
   </tbody>
