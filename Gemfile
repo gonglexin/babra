@@ -4,6 +4,8 @@ gem 'rails', '4.0.0.beta1'
 
 gem 'mysql2'
 
+gem 'rails-i18n'
+
 # style
 gem 'twitter-bootstrap-rails'
 

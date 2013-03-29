@@ -1,0 +1,37 @@
+zh-CN:
+  confirm: "你确定吗?"
+  date:
+    formats:
+      default: '%Y年%m月%d日'
+  will_paginate:
+    previous_label: "&#8592; 后退"
+    next_label: "前进 &#8594;"
+    page_gap: "&hellip;"
+  activerecord:
+    models:
+      category: '分类'
+      product: '产品'
+      topic: '新闻'
+      message: '留言'
+      user: '账户'
+    attributes:
+      category:
+        name: '分类名称'
+      product:
+        name: '名称'
+        image: '图片'
+        description: '描述'
+        category: '分类'
+      topic:
+        title: '标题'
+        body: '内容'
+      message:
+        name: '姓名'
+        contact: '联系方式'
+        body: '留言'
+      user:
+        name: '姓名'
+        email: '邮箱'
+        password: '密码'
+        current_password: '旧密码'
+        password_confirmation: '确认密码'

@@ -2,13 +2,13 @@
   <%= render 'shared/error_messages', target: @product %>
 
   <div class="control-group">
-    <%= f.label :name, '名称', class: 'control-label' %>
+    <%= f.label :name, class: 'control-label' %>
     <div class="controls">
       <%= f.text_field :name, class: 'text_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :image, '图片', class: 'control-label' %>
+    <%= f.label :image, class: 'control-label' %>
     <% if @product.image? %>
       <ul class="thumbnails">
         <li class="thumbnail">
@@ -22,13 +22,13 @@
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :description, '描述', class: 'control-label' %>
+    <%= f.label :description, class: 'control-label' %>
     <div class="controls">
       <%= f.text_area :description, style: "width: 400px;", cols: 100, rows: 12, class: 'text-area' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :category, '分类', class: 'control-label' %>
+    <%= f.label :category, class: 'control-label' %>
     <div class="controls">
       <%= f.select :category_id, Category.all.collect { |c| [c.name, c.id] } %>
     </div>

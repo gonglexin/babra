@@ -1,9 +1,0 @@
-cn:
-  confirm: "你确定吗?"
-  date:
-    formats:
-      default: '%Y年%m月%d日'
-  will_paginate:
-    previous_label: "&#8592; 后退"
-    next_label: "前进 &#8594;"
-    page_gap: "&hellip;"
