@@ -1,16 +1,16 @@
-<%= form_for [:admin, @topic], :html => { :class => 'form-horizontal' } do |f| %>
-  <%= render 'shared/error_messages', :target => @topic %>
+<%= form_for [:admin, @topic], html: { class: 'form-horizontal' } do |f| %>
+  <%= render 'shared/error_messages', target: @topic %>
 
   <div class="control-group">
-    <%= f.label :title, '标题', :class => 'control-label' %>
+    <%= f.label :title, '标题', class: 'control-label' %>
     <div class="controls">
-      <%= f.text_field :title, :class => 'text_field' %>
+      <%= f.text_field :title, class: 'text_field' %>
     </div>
   </div>
   <div class="control-group">
     <%= f.label :body, '内容', class: 'control-label' %>
     <div class="controls">
-      <%= f.text_area :body, :style => "width: 400px;", :cols => '100', :rows => 12, class: 'text-area' %>
+      <%= f.text_area :body, style: "width: 400px;", cols: 100, rows: 12, class: 'text-area' %>
     </div>
   </div>
 

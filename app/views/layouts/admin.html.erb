@@ -48,7 +48,9 @@
           <div class="nav-collapse collapse">
             <ul class="nav">
               <li><%= link_to "首页", root_path, target: '_blank'  %></li>
-              <li><%= link_to content_tag(:span, '注销', class: 'label label-important'), admin_root_path  %></li>
+              <% if signed_in? %>
+                <li><%= link_to content_tag(:span, '注销', class: 'label label-important'), admin_logout_path, method: :delete  %></li>
+              <% end %>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -65,6 +67,7 @@
               <li class="<%= current_page?(admin_categories_path)? 'active' : nil %>"><%= link_to "分类", admin_categories_path  %></li>
               <li class="<%= current_page?(admin_topics_path)? 'active' : nil %>"><%= link_to "新闻", admin_topics_path  %></li>
               <li class="<%= current_page?(admin_messages_path)? 'active' : nil %>"><%= link_to "留言", admin_messages_path  %></li>
+              <li class="<%= current_page?(admin_setting_path)? 'active' : nil %>"><%= link_to "设置", admin_setting_path  %></li>
             </ul>
           </div><!--/.well -->
         </div><!--/span-->

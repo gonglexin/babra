@@ -13,9 +13,16 @@ Babra::Application.routes.draw do
 
   namespace :admin do
     root to: 'products#index'
+
+    get    'setting' => 'users#edit'
+    get    'login'   => 'sessions#new'
+    delete 'logout'  => 'sessions#destroy'
+
     resources :products
     resources :categories
     resources :topics
     resources :messages, only: [:index, :show, :destroy]
+    resources :sessions, only: :create
+    resources :users, only: :update
   end
 end
