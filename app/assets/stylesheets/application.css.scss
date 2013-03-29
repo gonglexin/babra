@@ -31,6 +31,10 @@
     color: #999;
   }
 
+  .footer {
+    text-align: center;
+  }
+
   pre {
     background-color: white;
     border: none;
@@ -45,7 +49,7 @@
       }
 
       li.active>a{
-        background-color: #eeeeee;
+        background-color: #dddddd;
       }
     }
   }

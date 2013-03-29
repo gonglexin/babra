@@ -77,8 +77,17 @@
         </div>
       </div><!--/row-->
 
+      <hr />
       <footer>
-        <p>&copy; Company 2013</p>
+        <p>
+          <%= link_to "回到顶部", '#', class: "pull-right"  %>
+        </p>
+        <p>
+          Developed by <%= mail_to "gonglexin@gmail.com", "@gonglexin" %>,
+          follow on <%= link_to "twitter", "https://twitter.com/gonglexin" %>
+                    <%= link_to "github",  "https://github.com/gonglexin" %>
+                    <%= link_to "weibo",  "http://weibo.com/gonglexin" %>
+        </p>
       </footer>
 
     </div> <!-- /container -->

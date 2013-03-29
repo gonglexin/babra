@@ -19,7 +19,7 @@ set :rvm_path, "/usr/local/rvm/scripts/rvm"
 
 # Manually create these paths in shared/ (eg: shared/config/database.yml) in your server.
 # They will be linked in the 'deploy:link_shared_paths' step.
-set :shared_paths, ['config/database.yml', 'log']
+set :shared_paths, ['config/database.yml', 'log', 'public/uploads']
 
 # Optional settings:
 set :user, 'gonglexin'    # Username in the server to SSH to.
@@ -65,11 +65,15 @@ task :deploy => :environment do
     invoke :'rails:assets_precompile'
 
     to :launch do
-      queue "touch #{deploy_to}/#{current_path}/tmp/restart.txt"
+      queue "touch #{deploy_to}/tmp/restart.txt"
     end
   end
 end
 
+desc "Show server logs"
+task :logs do
+  queue %[cd #{deploy_to!} && tail -f shared/log/production.log]
+end
 # For help in making your deploy script, see the Mina documentation:
 #
 #  - http://nadarei.co/mina
