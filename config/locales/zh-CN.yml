@@ -35,3 +35,9 @@ zh-CN:
         password: '密码'
         current_password: '旧密码'
         password_confirmation: '确认密码'
+  errors:
+    messages:
+      extension_white_list_error: "请确认您提交的是图片!"
+      carrierwave_processing_error: "图片裁剪过程中出现错误,请联系管理员!"
+      carrierwave_integrity_error: "请确认您提交的是图片!"
+      carrierwave_download_error: "不能下载图片"
