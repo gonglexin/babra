@@ -8,6 +8,12 @@
   </ul>
 <% end %>
 
+<% if @product.taobao_url %>
+  <p>
+    <%= link_to '淘宝链接', @product.taobao_url, target: '_blank' %>
+  </p>
+<% end %>
+
 <%= content_tag(:pre, @product.description) unless @product.description.blank? %>
 
 <%= link_to '修改', edit_admin_product_path(@product), class: 'btn' %>

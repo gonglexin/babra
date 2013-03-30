@@ -22,6 +22,7 @@ zh-CN:
         image: '图片'
         description: '描述'
         category: '分类'
+        taobao_url: '淘宝链接'
       topic:
         title: '标题'
         body: '内容'
