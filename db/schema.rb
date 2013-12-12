@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20130330042121) do
     t.string   "ancestry"
   end
 
-  add_index "categories", ["ancestry"], name: "index_categories_on_ancestry"
+  add_index "categories", ["ancestry"], name: "index_categories_on_ancestry", using: :btree
 
   create_table "messages", force: true do |t|
     t.string   "name"
