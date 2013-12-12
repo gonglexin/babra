@@ -15,6 +15,7 @@ set :deploy_to, '/home/gonglexin/www/yzwffs.com'
 set :repository, 'git://github.com/gonglexin/babra.git'
 set :branch, 'master'
 
+set :term_mode, :system
 set :rvm_path, "/usr/local/rvm/scripts/rvm"
 
 # Manually create these paths in shared/ (eg: shared/config/database.yml) in your server.
